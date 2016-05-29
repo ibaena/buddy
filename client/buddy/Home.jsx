@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
+import SearchBar from './SearchBar.jsx';
+
 
 export default class Home extends TrackerReact(Component) {
 
@@ -17,7 +19,9 @@ export default class Home extends TrackerReact(Component) {
   render() {
     return (
       <div id="home-wrapper">
-        im home
+        <div className="container">
+          <SearchBar />
+        </div>
       </div>
     )
   }
