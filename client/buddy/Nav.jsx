@@ -18,12 +18,66 @@ export default class Nav extends TrackerReact(Component) {
     return (
       <nav className="black">
         <div className="nav-wrapper">
-          <a href="#!" className="brand-logo">Logo</a>
-          <ul className="right hide-on-med-and-down">
-            <li><a href="sass.html"><i className="material-icons">search</i></a></li>
-            <li><a href="badges.html"><i className="material-icons">view_module</i></a></li>
-            <li><a href="collapsible.html"><i className="material-icons">refresh</i></a></li>
-            <li><a href="mobile.html"><i className="material-icons">more_vert</i></a></li>
+          <ul id="nav-mobile" className="left hide-on-med-and-down">
+            <li>
+              <a href="">
+                <span className="fa-stack fa-lg menu" id="menu-one">
+                  <i className="fa fa-circle fa-stack-2x"></i>
+                  <i className="fa fa-facebook fa-stack-1x black-text" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span className="fa-stack fa-lg menu">
+                  <i className="fa fa-circle fa-stack-2x"></i>
+                  <i className="fa fa-twitter fa-stack-1x black-text" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span className="fa-stack fa-lg menu">
+                  <i className="fa fa-circle fa-stack-2x"></i>
+                  <i className="fa fa-google-plus fa-stack-1x black-text" aria-hidden="true"></i>
+                </span>
+              </a>
+
+            </li>
+            <li>
+              <a href="">
+                <span className="fa-stack fa-lg menu">
+                  <i className="fa fa-circle fa-stack-2x"></i>
+                  <i className="fa fa-youtube fa-stack-1x black-text" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span className="fa-stack fa-lg menu">
+                  <i className="fa fa-circle fa-stack-2x"></i>
+                  <i className="fa fa-instagram fa-stack-1x black-text" aria-hidden="true"></i>
+                </span>
+              </a>
+
+            </li>
+            <li>
+              <a href="">
+                <span className="fa-stack fa-lg menu">
+                  <i className="fa fa-circle fa-stack-2x"></i>
+                  <i className="fa fa-pinterest fa-stack-1x black-text" aria-hidden="true"></i>
+                </span>
+              </a>
+
+            </li>
+            <li>
+              <a href="">
+                <span className="fa-stack fa-lg menu">
+                  <i className="fa fa-circle fa-stack-2x"></i>
+                  <i className="fa fa-user fa-stack-1x black-text" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
