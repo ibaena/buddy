@@ -30,11 +30,22 @@ export default class SearchBar extends TrackerReact(Component) {
 
  submitForm(event){
    event.preventDefault();
-   console.log(this.refs.location.value);
-   console.log(this.refs.breed.value);
-   console.log(this.refs.size.value);
-   console.log(this.refs.age.value);
-   console.log(this.refs.gender.value);
+   let location = (this.refs.location.value);
+   let breed = (this.refs.breed.value);
+   let size = (this.refs.size.value);
+   let age = (this.refs.age.value);
+   let gender = (this.refs.gender.value);
+
+   Meteor.call("searchAll",  {location: location, breed: breed, size: size, age: age, gender:gender}, (error, res) => {
+    if(error) {
+      console.log("error:", error);
+
+    } else {
+      console.log(res.data.petfinder.pets);
+
+    }
+  });
+
  }
 
 
@@ -45,13 +56,13 @@ export default class SearchBar extends TrackerReact(Component) {
     return (
     <div className="row">
       <form className="col s12" onSubmit={this.submitForm.bind(this)}>
-        <div className="input-field col s2">
-        <input id="zip" type="search" placeholder="Zip"  ref="location" required />
+        <div className="input-field col s2" id="zip-box">
+        <input  id="zip" type="search" placeholder="Zip"  ref="location" required />
         </div>
 
         <div className="input-field col s2" id="breed">
           <select className="browser-default" ref="breed">
-
+            <option value="" >Breed</option>
             {
               this.state.breedList.map((breed) => {
                 return (
@@ -65,6 +76,7 @@ export default class SearchBar extends TrackerReact(Component) {
 
         <div className="input-field col s2" id="size">
           <select className="browser-default" ref="size">
+            <option value="" >Size</option>
             <option value="S">Small</option>
             <option value="M">Medium</option>
             <option value="L">Large</option>
@@ -74,6 +86,7 @@ export default class SearchBar extends TrackerReact(Component) {
 
         <div className="input-field col s2" id="age">
           <select className="browser-default" ref="age">
+            <option value="" >Age</option>
             <option value="Baby">Baby</option>
             <option value="Young">Young</option>
             <option value="Adult">Adult</option>
@@ -83,6 +96,7 @@ export default class SearchBar extends TrackerReact(Component) {
 
         <div className="input-field col s2" id="gender">
           <select className="browser-default" ref="gender">
+            <option value="" >Gender</option>
             <option value="M">Male</option>
             <option value="F">Female</option>
           </select>
