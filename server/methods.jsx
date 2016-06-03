@@ -1,5 +1,5 @@
 let breedUrl = 'http://api.petfinder.com/breed.list?key=8b0acceef1c1b5f46f7b3ea0c3fa801d&format=json&animal=';
-let searchUrl = 'http://api.petfinder.com/pet.find?key=8b0acceef1c1b5f46f7b3ea0c3fa801d&format=json&output=full&animal=dog';
+let searchUrl = 'http://api.petfinder.com/pet.find?key=8b0acceef1c1b5f46f7b3ea0c3fa801d&format=json&output=full&animal=dog&count=19';
 
 //&location=07002&breed=&size=&sex=&age=
 

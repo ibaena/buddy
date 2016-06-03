@@ -41,8 +41,9 @@ export default class SearchBar extends TrackerReact(Component) {
    let gender = (this.refs.gender.value);
 
    Meteor.call("searchAll",  {location: location, breed: breed, size: size, age: age, gender:gender}, (error, res) => {
-    if(error) {
+    if(error || res.data.petfinder.pets === undefined) {
       console.log("error:", error);
+      Bert.alert( 'Somewhere along the way things broke, lets tray again ', 'danger', 'fixed-top', 'fa-frown-o' );
 
     } else {
       console.log(res.data.petfinder.pets);

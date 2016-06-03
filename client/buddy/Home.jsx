@@ -28,7 +28,6 @@ export default class Home extends TrackerReact(Component) {
             </p>
           </div>
           <SearchBar />
-          <Results />
         </div>
       </div>
     )
