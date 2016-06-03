@@ -15,10 +15,16 @@ export default class Results extends TrackerReact(Component) {
   petSearch() {
     return Session.get('petSearch');
   }
- componentDidMount(){
+
+  paginate() {
+    return Session.get('petPagination');
+  }
+
+  componentDidMount(){
    $('.slider').slider('start');
 
  }
+
 
   render() {
 
@@ -27,20 +33,23 @@ export default class Results extends TrackerReact(Component) {
         <div className="row">
             {
               this.petSearch().map((pet) => {
-              console.log(pet);
+
                 if(pet.media.photos != undefined){
                   return(
-                    <div className ="col l6 m6 s12" key={pet.id.$t}>
+                    <div className ="col l4 m4 s12" key={pet.id.$t}>
+
                       <div className="card" >
-                        <div className="image-wrapper" >
+                        <div className="card-image" >
                           <img src={pet.media.photos.photo[1].$t} className="circle responsive-img petPics" />
-                          <p>{pet.name.$t}</p>
                         </div>
-                        <div className="card-reveal">
-                          <span className="card-title grey-text text-darken-4">Card Title<i className="material-icons right">close</i></span>
-                          <p>{pet.description.$t}</p>
+
+                        <div className="card-content">
+                          <span className="truncate name"><i className="fa fa-paw left" aria-hidden="true"></i>{pet.name.$t}</span>
+                          <span className="truncate name"><i className="fa fa-location-arrow left" aria-hidden="true"></i>{pet.contact.city.$t}, {pet.contact.state.$t}</span>
                         </div>
+
                       </div>
+
                     </div>
                   )
                 }else{

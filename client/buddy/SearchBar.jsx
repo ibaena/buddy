@@ -42,7 +42,10 @@ export default class SearchBar extends TrackerReact(Component) {
       console.log("error:", error);
 
     } else {
+      console.log(res);
+
       Session.set('petSearch',res.data.petfinder.pets.pet);
+      Session.set('petPagination',res.data.petfinder.lastOffset);
     }
   });
 
@@ -109,7 +112,7 @@ export default class SearchBar extends TrackerReact(Component) {
           </div>
 
           <div className="input-field col l2 m2 s12" id="btn">
-            <button className="btn waves-effect waves-light black" type="submit" >Search
+            <button className="btn waves-effect waves-light black"  type="submit" >Search
             </button>
           </div>
 
