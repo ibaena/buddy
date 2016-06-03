@@ -12,34 +12,37 @@ export default class Nav extends TrackerReact(Component) {
   }
 
  componentDidMount(){
+    $(".button-collapse").sideNav();
+    $(".user").sideNav();
  }
 
   render() {
     return (
-      <nav className="black">
+      <nav className="white">
         <div className="nav-wrapper">
+          <a href="" data-activates="mobile-demo" className="button-collapse black-text right"><i className="material-icons">menu</i></a>
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li>
               <a href="">
                 <span className="fa-stack fa-lg menu" id="menu-one">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fa fa-facebook fa-stack-1x black-text" aria-hidden="true"></i>
+                  <i className="fa fa-circle fa-stack-2x black-text"></i>
+                  <i className="fa fa-facebook fa-stack-1x white-text" aria-hidden="true"></i>
                 </span>
               </a>
             </li>
             <li>
               <a href="">
                 <span className="fa-stack fa-lg menu">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fa fa-twitter fa-stack-1x black-text" aria-hidden="true"></i>
+                  <i className="fa fa-circle fa-stack-2x black-text"></i>
+                  <i className="fa fa-twitter fa-stack-1x white-text" aria-hidden="true"></i>
                 </span>
               </a>
             </li>
             <li>
               <a href="">
                 <span className="fa-stack fa-lg menu">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fa fa-google-plus fa-stack-1x black-text" aria-hidden="true"></i>
+                  <i className="fa fa-circle fa-stack-2x black-text"></i>
+                  <i className="fa fa-google-plus fa-stack-1x white-text" aria-hidden="true"></i>
                 </span>
               </a>
 
@@ -47,16 +50,16 @@ export default class Nav extends TrackerReact(Component) {
             <li>
               <a href="">
                 <span className="fa-stack fa-lg menu">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fa fa-youtube fa-stack-1x black-text" aria-hidden="true"></i>
+                  <i className="fa fa-circle fa-stack-2x black-text"></i>
+                  <i className="fa fa-youtube fa-stack-1x white-text" aria-hidden="true"></i>
                 </span>
               </a>
             </li>
             <li>
               <a href="">
                 <span className="fa-stack fa-lg menu">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fa fa-instagram fa-stack-1x black-text" aria-hidden="true"></i>
+                  <i className="fa fa-circle fa-stack-2x black-text"></i>
+                  <i className="fa fa-instagram fa-stack-1x white-text" aria-hidden="true"></i>
                 </span>
               </a>
 
@@ -64,19 +67,25 @@ export default class Nav extends TrackerReact(Component) {
             <li>
               <a href="">
                 <span className="fa-stack fa-lg menu">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fa fa-pinterest fa-stack-1x black-text" aria-hidden="true"></i>
+                  <i className="fa fa-circle fa-stack-2x black-text"></i>
+                  <i className="fa fa-pinterest fa-stack-1x white-text" aria-hidden="true"></i>
                 </span>
               </a>
 
             </li>
             <li>
-              <a href="">
+              <a href="" data-activates="mobile-demo" className="user">
                 <span className="fa-stack fa-lg menu">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fa fa-user fa-stack-1x black-text" aria-hidden="true"></i>
+                  <i className="fa fa-circle fa-stack-2x black-text"></i>
+                  <i className="fa fa-user fa-stack-1x white-text" aria-hidden="true"></i>
                 </span>
               </a>
+            </li>
+          </ul>
+
+          <ul className="side-nav" id="mobile-demo">
+            <li>
+              <img className="circle" alt="profile" src="http://placehold.it/100x100" />
             </li>
           </ul>
         </div>

@@ -9,6 +9,7 @@ export default class SearchBar extends TrackerReact(Component) {
   constructor() {
     super();
      this.state = { breedList: [] };
+     Session.set('petSearch', []);
   }
 
 
@@ -41,75 +42,79 @@ export default class SearchBar extends TrackerReact(Component) {
       console.log("error:", error);
 
     } else {
-      console.log(res.data.petfinder.pets);
-
+      Session.set('petSearch',res.data.petfinder.pets.pet);
     }
   });
 
  }
 
 
-
-
   render() {
 
     return (
     <div className="row">
-      <form className="col l12 m12 s12" onSubmit={this.submitForm.bind(this)}>
-        <div className="input-field col l2 m2 s12" id="zip-box">
-        <input  id="zip" type="search" placeholder="Zip"  ref="location" required />
-        </div>
+      <div className="col  l12 m12 s12">
+        <p id="title">
+          Adopt the perfect pet
+          from more than 16,000 animal shelters and rescues!
+        </p>
+      </div>
+      <div className="card col l12 m12 s12">
+        <form className="" onSubmit={this.submitForm.bind(this)} action="/search">
 
-        <div className="input-field col l2 m2 s12" id="breed">
-          <select className="browser-default" ref="breed">
-            <option value="" >Breed</option>
-            {
-              this.state.breedList.map((breed) => {
-                return (
+          <div className="input-field col l2 m2 s12" id="zip-box">
+          <input  id="zip" type="search" placeholder="Zip"  ref="location" required />
+          </div>
 
-                  <option key={breed.$t} value={breed.$t}>{breed.$t}</option>
-              )
-            })
-          }
-          </select>
-        </div>
+          <div className="input-field col l2 m2 s12" id="breed">
+            <select className="browser-default" ref="breed">
+              <option value="" >Breed</option>
+              {
+                this.state.breedList.map((breed) => {
+                  return (
 
-        <div className="input-field col l2 m2 s12" id="size">
-          <select className="browser-default" ref="size">
-            <option value="" className="default-option">Size</option>
-            <option value="S">Small</option>
-            <option value="M">Medium</option>
-            <option value="L">Large</option>
-            <option value="XL">Extra large</option>
-          </select>
-        </div>
+                    <option key={breed.$t} value={breed.$t}>{breed.$t}</option>
+                )
+              })
+            }
+            </select>
+          </div>
 
-        <div className="input-field col l2 m2 s12" id="age">
-          <select className="browser-default" ref="age">
-            <option value="" >Age</option>
-            <option value="Baby">Baby</option>
-            <option value="Young">Young</option>
-            <option value="Adult">Adult</option>
-            <option value="Senior">Senior</option>
-          </select>
-        </div>
+          <div className="input-field col l2 m2 s12" id="size">
+            <select className="browser-default" ref="size">
+              <option value="" className="default-option">Size</option>
+              <option value="S">Small</option>
+              <option value="M">Medium</option>
+              <option value="L">Large</option>
+              <option value="XL">Extra large</option>
+            </select>
+          </div>
 
-        <div className="input-field col l2 m2 s12" id="gender">
-          <select className="browser-default" ref="gender">
-            <option value="" >Gender</option>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-          </select>
-        </div>
+          <div className="input-field col l2 m2 s12" id="age">
+            <select className="browser-default" ref="age">
+              <option value="" >Age</option>
+              <option value="Baby">Baby</option>
+              <option value="Young">Young</option>
+              <option value="Adult">Adult</option>
+              <option value="Senior">Senior</option>
+            </select>
+          </div>
 
-        <div className="input-field col l2 m2 s12" id="btn">
-          <button className="btn waves-effect waves-light black" >Submit
-            <i className="material-icons right">send</i>
-          </button>
-        </div>
+          <div className="input-field col l2 m2 s12" id="gender">
+            <select className="browser-default" ref="gender">
+              <option value="" >Gender</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+            </select>
+          </div>
 
-      </form>
+          <div className="input-field col l2 m2 s12" id="btn">
+            <button className="btn waves-effect waves-light black" type="submit" >Search
+            </button>
+          </div>
 
+        </form>
+      </div>
     </div>
     )
   }
