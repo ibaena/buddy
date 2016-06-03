@@ -16,54 +16,39 @@ export default class Results extends TrackerReact(Component) {
     return Session.get('petSearch');
   }
  componentDidMount(){
-   $('.slider').slider();
+   $('.slider').slider('start');
 
  }
 
   render() {
+
     return (
       <div id="results-wrapper">
         <div className="row">
-        {
-          this.petSearch().map((pet) => {
-                                        console.log(pet);
-            if(pet.media.photos != undefined){
-              return(
-                <div className="col l4 m4 s12" key={pet.id.$t}>
-                  <div className="card">
-                    <div className="card-image">
+            {
+              this.petSearch().map((pet) => {
+              console.log(pet);
+                if(pet.media.photos != undefined){
+                  return(
+                    <div className ="col l6 m6 s12" key={pet.id.$t}>
+                      <div className="card" >
+                        <div className="image-wrapper" >
+                          <img src={pet.media.photos.photo[1].$t} className="circle responsive-img petPics" />
+                          <p>{pet.name.$t}</p>
+                        </div>
+                        <div className="card-reveal">
+                          <span className="card-title grey-text text-darken-4">Card Title<i className="material-icons right">close</i></span>
+                          <p>{pet.description.$t}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                }else{
+                  console.log("failure");
+                }
 
-                      {
-                          pet.media.photos.photo.map((picture) => {
-
-                            return(
-                              <div className="slider">
-                                <ul className="slides">
-                                  <li>
-                                    <img src={picture.$t} />
-                                      <div className="caption center-align">
-                                        <h3>{pet.name.$t}</h3>
-                                        <h5 className="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                            )
-                          })
-                      }
-                  </div>
-                    <p>{pet.name.$t}</p>
-                  </div>
-                </div>
-              )
-
-            }else{
-              console.log("failure");
-
+              })
             }
-
-          })
-        }
         </div>
       </div>
     )
