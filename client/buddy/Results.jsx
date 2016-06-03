@@ -9,7 +9,7 @@ export default class Results extends TrackerReact(Component) {
   // Note: In ES6, constructor() === componentWillMount() in React ES5
   constructor() {
     super();
-    Session.set('petSearch', []);
+    
   }
 
   petSearch() {

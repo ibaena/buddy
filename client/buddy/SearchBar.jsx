@@ -9,7 +9,10 @@ export default class SearchBar extends TrackerReact(Component) {
   constructor() {
     super();
      this.state = { breedList: [] };
-     Session.set('petSearch', []);
+     if(Session.get('petSearch') === undefined){
+        Session.set('petSearch', []);
+     }
+
   }
 
 
@@ -42,10 +45,12 @@ export default class SearchBar extends TrackerReact(Component) {
       console.log("error:", error);
 
     } else {
-      console.log(res);
+      console.log(res.data.petfinder.pets);
 
       Session.set('petSearch',res.data.petfinder.pets.pet);
       Session.set('petPagination',res.data.petfinder.lastOffset);
+      FlowRouter.go('/search/');
+
     }
   });
 
@@ -56,14 +61,8 @@ export default class SearchBar extends TrackerReact(Component) {
 
     return (
     <div className="row">
-      <div className="col  l12 m12 s12">
-        <p id="title">
-          Adopt the perfect pet
-          from more than 16,000 animal shelters and rescues!
-        </p>
-      </div>
       <div className="card col l12 m12 s12">
-        <form className="" onSubmit={this.submitForm.bind(this)} action="/search">
+        <form className="" onSubmit={this.submitForm.bind(this)}>
 
           <div className="input-field col l2 m2 s12" id="zip-box">
           <input  id="zip" type="search" placeholder="Zip"  ref="location" required />

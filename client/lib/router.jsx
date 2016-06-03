@@ -4,7 +4,7 @@ import {mount} from 'react-mounter';
 
 import {MainLayout} from '../layouts/main-layout.jsx';
 import Home from '../buddy/Home.jsx';
-import Results from '../buddy/Results.jsx';
+import List from '../buddy/List.jsx';
 
 FlowRouter.route('/',{
   action(){
@@ -13,6 +13,6 @@ FlowRouter.route('/',{
 });
 FlowRouter.route('/search',{
   action(){
-      mount(MainLayout, {content: (<Results />)});
+      mount(MainLayout, {content: (<List />)});
   }
 });
