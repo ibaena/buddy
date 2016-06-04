@@ -19,17 +19,15 @@ export default class Home extends TrackerReact(Component) {
 
   render() {
     return (
-      <div id="home-wrapper">
         <div className="container">
           <div className="col  l12 m12 s12">
             <p id="title">
-              Adopt the perfect pet
+              Adopt the perfect dog
               from more than 16,000 animal shelters and rescues!
             </p>
           </div>
           <SearchBar />
         </div>
-      </div>
     )
   }
 }

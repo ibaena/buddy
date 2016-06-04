@@ -38,15 +38,7 @@ export default class Nav extends TrackerReact(Component) {
                 </span>
               </a>
             </li>
-            <li>
-              <a href="">
-                <span className="fa-stack fa-lg menu">
-                  <i className="fa fa-circle fa-stack-2x black-text"></i>
-                  <i className="fa fa-google-plus fa-stack-1x white-text" aria-hidden="true"></i>
-                </span>
-              </a>
 
-            </li>
             <li>
               <a href="">
                 <span className="fa-stack fa-lg menu">
@@ -72,6 +64,14 @@ export default class Nav extends TrackerReact(Component) {
                 </span>
               </a>
 
+            </li>
+            <li>
+              <a href="/">
+                <span className="fa-stack fa-lg menu">
+                  <i className="fa fa-circle fa-stack-2x black-text"></i>
+                  <i className="fa fa-home fa-stack-1x white-text" aria-hidden="true"></i>
+                </span>
+              </a>
             </li>
             <li>
               <a href="" data-activates="mobile-demo" className="user">

@@ -17,8 +17,7 @@ export default class Footer extends TrackerReact(Component) {
 
   render() {
     return (
-      <footer className="page-footer transparent">
-        <hr />
+      <footer className="page-footer white">
         <div className="container">
           <div className="row">
             <div className="col l6 s12">

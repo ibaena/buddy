@@ -9,9 +9,12 @@ export const MainLayout = ({content}) => (
 
   <div className="main-wrapper">
     <Nav />
+
     <main>
       {content}
     </main>
-    <Footer />
+
+    <Footer  />
+
   </div>
 )

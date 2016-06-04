@@ -15,6 +15,7 @@ export default class List extends TrackerReact(Component) {
   }
 
  componentDidMount(){
+
  }
 
   render() {

@@ -9,7 +9,7 @@ export default class Results extends TrackerReact(Component) {
   // Note: In ES6, constructor() === componentWillMount() in React ES5
   constructor() {
     super();
-    
+
   }
 
   petSearch() {
@@ -21,7 +21,7 @@ export default class Results extends TrackerReact(Component) {
   }
 
   componentDidMount(){
-   $('.slider').slider('start');
+    $('.materialboxed').materialbox();
 
  }
 
@@ -37,18 +37,26 @@ export default class Results extends TrackerReact(Component) {
                 if(pet.media.photos != undefined){
                   return(
                     <div className ="col l4 m4 s12" key={pet.id.$t}>
+                        <div className="card hvr-bob " >
 
-                      <div className="card" >
-                        <div className="card-image" >
-                          <img src={pet.media.photos.photo[1].$t} className="circle responsive-img petPics" />
+                          <div className="card-image" >
+                            <img src={pet.media.photos.photo[1].$t} className=" petPics" width="300"/>
+                          </div>
+
+                          <div className="card-content">
+                            <a href={"/pet/"+pet.id.$t+"/"+pet.name.$t} ><i className="fa fa-info-circle fa-2x right" aria-hidden="true"></i></a>
+                            <span className="truncate name">
+                              <i className="fa fa-paw left" aria-hidden="true"></i>
+                              {pet.name.$t}
+                            </span>
+                            <span className="truncate name">
+                              <i className="fa fa-location-arrow left" aria-hidden="true"></i>
+                              {pet.contact.city.$t}, {pet.contact.state.$t}
+                            </span>
+
+                          </div>
+
                         </div>
-
-                        <div className="card-content">
-                          <span className="truncate name"><i className="fa fa-paw left" aria-hidden="true"></i>{pet.name.$t}</span>
-                          <span className="truncate name"><i className="fa fa-location-arrow left" aria-hidden="true"></i>{pet.contact.city.$t}, {pet.contact.state.$t}</span>
-                        </div>
-
-                      </div>
 
                     </div>
                   )
