@@ -17,7 +17,7 @@ export default class Footer extends TrackerReact(Component) {
 
   render() {
     return (
-      <footer className="page-footer white">
+
         <div className="container">
           <div className="row">
             <div className="col l6 s12">
@@ -69,13 +69,8 @@ export default class Footer extends TrackerReact(Component) {
             </div>
           </div>
         </div>
-        <div className="footer-copyright transparent">
-          <div className="container">
-          © 2014 Copyright Text
-          <a className="black-text right" href="#!">More Links</a>
-          </div>
-        </div>
-      </footer>
+
+
     )
   }
 }

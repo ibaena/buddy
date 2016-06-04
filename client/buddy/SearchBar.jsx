@@ -29,7 +29,6 @@ export default class SearchBar extends TrackerReact(Component) {
         this.setState({breedList: res.data.petfinder.breeds.breed});
      }
    });
-
  }
 
  submitForm(event){

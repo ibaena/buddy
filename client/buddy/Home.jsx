@@ -15,31 +15,22 @@ export default class Home extends TrackerReact(Component) {
   }
 
  componentDidMount(){
-   $('.parallax').parallax();
+
  }
 
   render() {
     return (
-      <div id="home-wrapper">
-
-        <div className="parallax-container">
-          <div className="parallax"><img src="http://www.atglenvet.com/wp-content/uploads/2014/09/lab.png" className=" paraImg" /></div>
-        </div>
-
-        <div className="section transparent">
-          <div className="row container">
+        <div className="container section white">
+          <div className="row ">
             <div className="col  l12 m12 s12">
               <p id="title">
                 Adopt the perfect dog
                 from more than 16,000 animal shelters and rescues!
               </p>
             </div>
-            <SearchBar />
           </div>
+          <SearchBar />
         </div>
-
-
-      </div>
 
     )
   }

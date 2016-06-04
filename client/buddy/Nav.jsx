@@ -18,6 +18,7 @@ export default class Nav extends TrackerReact(Component) {
 
   render() {
     return (
+    <div className="navbar-fixed">
       <nav className="white">
         <div className="nav-wrapper">
           <a href="" data-activates="mobile-demo" className="button-collapse black-text right"><i className="material-icons">menu</i></a>
@@ -90,6 +91,7 @@ export default class Nav extends TrackerReact(Component) {
           </ul>
         </div>
       </nav>
+    </div>
     )
   }
 }
