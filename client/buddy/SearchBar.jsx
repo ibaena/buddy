@@ -61,7 +61,7 @@ export default class SearchBar extends TrackerReact(Component) {
 
     return (
     <div className="row">
-      <div className="card col l12 m12 s12">
+      <div className="card col l12 m12 s12" id="searchCard">
         <form className="" onSubmit={this.submitForm.bind(this)}>
 
           <div className="input-field col l2 m2 s12" id="zip-box">

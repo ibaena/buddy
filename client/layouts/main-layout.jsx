@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 import Nav from '../buddy/Nav.jsx';
-import Footer from '../buddy/Footer.jsx';
+import FooterTemplate from '../buddy/Footer.jsx';
 
 export const MainLayout = ({content}) => (
 
-  <div className="main-wrapper">
+  <div id="body">
     <header>
       <Nav />
     </header>
@@ -17,7 +17,7 @@ export const MainLayout = ({content}) => (
     </main>
 
     <footer className="page-footer grey lighten-5">
-      <Footer  />
+      <FooterTemplate  />
         <div className="footer-copyright grey lighten-5">
           <div className="container black-text">
           © 2014 Copyright Text
@@ -25,6 +25,7 @@ export const MainLayout = ({content}) => (
           </div>
         </div>
     </footer>
+
 
   </div>
 )

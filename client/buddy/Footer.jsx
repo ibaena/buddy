@@ -18,7 +18,7 @@ export default class Footer extends TrackerReact(Component) {
   render() {
     return (
 
-        <div className="container">
+        <div className="container ">
           <div className="row">
             <div className="col l6 s12">
               <h5 className="black-text">DogFinder</h5>
