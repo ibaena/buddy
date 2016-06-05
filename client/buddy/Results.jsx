@@ -61,7 +61,7 @@ export default class Results extends TrackerReact(Component) {
                     </div>
                   )
                 }else{
-                  console.log("failure");
+                  console.log("result had no images need to fix");
                 }
 
               })
