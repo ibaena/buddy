@@ -42,7 +42,7 @@ export default class SearchBar extends TrackerReact(Component) {
    Meteor.call("searchAll",  {location: location, breed: breed, size: size, age: age, gender:gender}, (error, res) => {
     if(error || res.data.petfinder.pets.pet === undefined) {
       console.log("error:", error);
-      Bert.alert( 'Somewhere along the way things broke, lets tray again ', 'danger', 'fixed-top', 'fa-frown-o' );
+      Bert.alert( 'Sorry we could not find your selection try again!', 'danger', 'fixed-top', 'fa-frown-o' );
 
     } else if (res.data.petfinder.lastOffset.$t  === '1') {
       console.log(res.data.petfinder);
